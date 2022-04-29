@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
-""" Write a function named index_range that takes
-two integer arguments page and page_size.
+"""
+This is a simple helper function to find
+start and end pagination parameters.
 """
 
 
 def index_range(page: int, page_size: int) -> tuple:
-        """ create a tuple containing page and the page_size """
-
-            start_index = (page - 1) * page_size
-                end_index = start_index + page_size
-                    return (start_index, end_index)
+    """
+    Return the start and end index of the range
+    of items to be displayed on the page.
+    Args:
+        page (int): The page number.
+        page_size (int): The number of items per page.
+    Returns:
+        tuple: The start and end index of the range
+        of items to be displayed on the page.
+    """
+    end = page * page_size
+    start = end - page_size
+    return start, end
