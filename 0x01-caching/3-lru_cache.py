@@ -24,8 +24,8 @@ class LRUCache(BaseCaching):
             pass
         else:
             length = len(self.cache_data)
-            if length > BaseCaching.MAX_ITEMS and key not in self.cache_data:
-                print("DISCARD: {}".format(self.usage[0]))
+            if length >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
+                print("DISCARD: {} \n".format(self.usage[0]))
                 del self.cache_data[self.usage[0]]
                 del self.usage[0]
             if key in self.usage:
